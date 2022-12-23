@@ -48,11 +48,6 @@ repos:
     - --comment-style
     - //
     # - --remove-header
-- repo: https://github.com/jumanjihouse/pre-commit-hooks
-  rev: 3.0.0
-  hooks:
-  - id: shellcheck
-    exclude: hack/hooks/pre-commit.git-crypt.sh
 -   repo: https://github.com/doublify/pre-commit-rust
     rev: v1.0
     hooks:
