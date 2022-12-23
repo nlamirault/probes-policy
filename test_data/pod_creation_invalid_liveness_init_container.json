@@ -1,0 +1,72 @@
+{
+  "uid": "1299d386-525b-4032-98ae-1949f69f9cfc",
+  "kind": {
+    "kind": "Pod",
+    "version": "v1"
+  },
+  "object": {
+    "metadata": {
+      "name": "invalid-pod-name",
+      "namespace": "default"
+    },
+    "spec": {
+      "containers": [
+        {
+          "image": "nginx",
+          "name": "nginx",
+          "livenessProbe": {
+            "failureThreshold": 3,
+            "httpGet": {
+                "path": "/healthy",
+                "port": 8080,
+                "scheme": "HTTP"
+            },
+            "periodSeconds": 10,
+            "successThreshold": 1,
+            "timeoutSeconds": 1
+          },
+          "readinessProbe": {
+            "failureThreshold": 3,
+            "httpGet": {
+                "path": "/ready",
+                "port": 8080,
+                "scheme": "HTTP"
+            },
+            "periodSeconds": 10,
+            "successThreshold": 1,
+            "timeoutSeconds": 1
+          }
+        }
+      ],
+      "initContainers": [
+        {
+          "image": "busybox",
+          "name": "init",
+          "readinessProbe": {
+            "failureThreshold": 3,
+            "httpGet": {
+                "path": "/ready",
+                "port": 8080,
+                "scheme": "HTTP"
+            },
+            "periodSeconds": 10,
+            "successThreshold": 1,
+            "timeoutSeconds": 1
+          }
+        }
+      ]
+    }
+  },
+  "operation": "CREATE",
+  "requestKind": {
+    "version": "v1",
+    "kind": "Pod"
+  },
+  "userInfo": {
+    "username": "alice",
+    "uid": "alice-uid",
+    "groups": [
+      "system:authenticated"
+    ]
+  }
+}
