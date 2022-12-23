@@ -16,10 +16,8 @@
 
 # labels to be used with /area command
 area:
-  - 'gcp'
-  - 'aws'
-  - 'azure'
-  - 'kubernetes'
+  - 'rust'
+  - 'github'
 
 kind:
   - 'documentation'
@@ -43,22 +41,9 @@ status:
 # tests:
 #   - '**/*.test.ts'
 
-'area/kubernetes':
-  - kubernetes/*
-  - kubernetes/**/*
+'area/rust':
+  - src/**/*
 
-'area/gcp':
-  - iac/gcp/*
-  - iac/gcp/**/*
-
-'area/aws':
-  - iac/aws/*
-  - iac/aws/**/*
-
-'area/azure':
-  - iac/azure/*
-  - iac/azure/**/*
-
-'kind/documentation':
-  - docs/*
-  - docs/**/*
+'area/github':
+  - .github/*
+  - github/**/*

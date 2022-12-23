@@ -16,22 +16,9 @@
 
 # Labels for action/labeler
 
-area/kubernetes:
-  - kubernetes/*
-  - kubernetes/**/*
+area/rust:
+  - src/**/*
 
-area/gcp:
-  - iac/gcp/*
-  - iac/gcp/**/*
-
-area/aws:
-  - iac/aws/*
-  - iac/aws/**/*
-
-area/azure:
-  - iac/azure/*
-  - iac/azure/**/*
-
-kind/documentation:
-  - docs/*
-  - docs/**/*
+area/github:
+  - .github/*
+  - github/**/*
