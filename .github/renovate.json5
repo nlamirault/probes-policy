@@ -17,6 +17,22 @@
   "reviewersFromCodeOwners": true,
   // "labels": ["kind/renovate"],
   "packageRules": [
+    // Labels for Crate
+    {
+      "datasources": ["crate"],
+      "updateTypes": ["major"],
+      "labels": ["kind/renovate", "lifecycle/active", "status/review_needed", "dependency/rust", "priority/high", "size/xs"]
+    },
+    {
+      "datasources": ["crate"],
+      "updateTypes": ["minor"],
+      "labels": ["kind/renovate", "lifecycle/active", "status/review_needed", "dependency/rust", "priority/medium", "size/xs"]
+    },
+    {
+      "datasources": ["crate"],
+      "updateTypes": ["patch"],
+      "labels": ["kind/renovate", "lifecycle/active", "status/review_needed", "dependency/rust", "priority/low", "size/xs"]
+    },
     // Labels for Docker
     {
       "datasources": ["docker"],
