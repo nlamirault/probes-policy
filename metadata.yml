@@ -24,12 +24,10 @@ contextAware: false
 executionMode: kubewarden-wapc
 annotations:
   io.kubewarden.policy.title: probes-policy
-  io.kubewarden.policy.description: Short description
+  io.artifacthub.displayName: Probes validator policy
+  io.kubewarden.policy.description: This policy validates that all containers have livenessProbe and readinessProbe defined.
   io.kubewarden.policy.author: Nicolas Lamirault <nicolas.lamirault@gmail.com>
   io.kubewarden.policy.url: https://github.com/nlamirault/probes-policy
   io.kubewarden.policy.source: https://github.com/nlamirault/probes-policy
   io.kubewarden.policy.license: Apache-2.0
-  io.kubewarden.policy.usage: |
-    Long explaination.
-
-    **Note well:** this can be Markdown text
+  io.kubewarden.policy.ociUrl: ghcr.io/nlamirault/policies/probes-policy #FIXME this needs to be a valid OCI URL.
