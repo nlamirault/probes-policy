@@ -46,4 +46,4 @@ jobs:
       oci-target: ghcr.io/kubewarden/policies/disallow-default-namespace
 
     secrets:
-      workflow-pat: ${{ secrets.WORKFLOW_PAT }}
+      workflow-pat: ${{ secrets.GITHUB_TOKEN }}
