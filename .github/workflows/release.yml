@@ -42,7 +42,7 @@ jobs:
 
     uses: kubewarden/github-actions/.github/workflows/reusable-release-policy-rust.yml@v3.1.0
     with:
-      input-wasm: disallow_default_namespace
+      # input-wasm: disallow_default_namespace
       oci-target: ghcr.io/kubewarden/policies/disallow-default-namespace
 
     secrets:
