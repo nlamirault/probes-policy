@@ -17,26 +17,39 @@
 ---
 version: 0.1.0
 name: probes-policy
-displayName: probes-policy
-createdAt: '2022-07-19T16:39:10+02:00'
-description: Check if readiness and liveness probes exists
+displayName: Probes validator policy
+createdAt: 2023-03-28T18:21:43.520509319Z
+description: This policy validates that all containers have livenessProbe and readinessProbe defined.
 license: Apache-2.0
 homeURL: https://github.com/nlamirault/probes-policy
 containersImages:
 - name: policy
-  image: "ghcr.io/kubewarden/policies/probes-policy:v0.1.0"
-keywords:
-- this is freeform
+  image: ghcr.io/nlamirault/policies/probes-policy:v0.1.0
 links:
 - name: policy
   url: https://github.com/nlamirault/probes-policy/releases/download/v0.1.0/policy.wasm
 - name: source
   url: https://github.com/nlamirault/probes-policy
+install: |
+  The policy can be obtained using [`kwctl`](https://github.com/kubewarden/kwctl):
+  ```console
+  kwctl pull ghcr.io/nlamirault/policies/probes-policy:v0.1.0
+  ```
+maintainers:
+- name: Nicolas Lamirault
+  email: nicolas.lamirault@gmail.com
 provider:
   name: kubewarden
 recommendations:
 - url: https://artifacthub.io/packages/helm/kubewarden/kubewarden-controller
 annotations:
-  kubewarden/resources: Pod, Deployment, StatefulSet, DaemonSet, CronJob, Job # comma separated list
-  kubewarden/mutation: false
-  kubewarden/contextAware: false
+  kubewarden/mutation: 'false'
+  kubewarden/rules: |
+    - apiGroups:
+      - ''
+      apiVersions:
+      - v1
+      resources:
+      - pods
+      operations:
+      - CREATE
